@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~@angular/material/prebuilt-themes/indigo-pink';
+@import '~font-awesome/scss/font-awesome';
+
+@import './style/custom-angular-material';
+
+/* Start: Adding padding And Margin styles. ex: padding-left-0, padding-all-0 etc */
+@mixin padding-margin($side, $width) {
+  @if $side == 'all' {
+    .padding-#{$width} {
+      padding: #{$width}px !important;
+    }
+
+    .margin-#{$width} {
+      margin: #{$width}px !important;
+    }
+  } @else {
+    .padding-#{$side}-#{$width} {
+      padding-#{$side}: #{$width}px !important;
+    }
+
+    .margin-#{$side}-#{$width} {
+      margin-#{$side}: #{$width}px !important;
+    }
+  }
+}
+
+$padding-margin-size-list: 0 1 5 10;
+
+@each $width in $padding-margin-size-list {
+  $side-list: 'left' 'right' 'bottom' 'top' 'all';
+  @each $side in $side-list{
+    @include padding-margin($side, $width);
+  }
+}
+/* End: Adding padding And Margin styles. ex: padding-left-0, padding-all-0 etc */
