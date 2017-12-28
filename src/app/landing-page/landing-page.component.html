@@ -1,0 +1,16 @@
+<!-- flex container displaying children as a column -->
+<section class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <discover-image-header></discover-image-header>
+
+  <div fxFlex fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxFlex fxLayout="row" fxLayoutAlign="center center">
+      <div>
+        <h2><a href="" [routerLink]="['/imageSearch']">Go to Image Search</a></h2>
+      </div>
+    </div>
+
+    <discover-image-footer></discover-image-footer>
+  </div>
+</section>
+

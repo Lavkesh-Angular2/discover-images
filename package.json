@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -p 8080 -bh /di",
+    "start": "ng serve -p 8080 -bh /discoverImage",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",

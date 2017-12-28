@@ -6,6 +6,20 @@
 
 @import './style/custom-angular-material';
 
+* {
+  font-family: "Times New Roman", Georgia, serif, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+}
+
+.app {
+  height: 100vh;
+}
+
 /* Start: Adding padding And Margin styles. ex: padding-left-0, padding-all-0 etc */
 @mixin padding-margin($side, $width) {
   @if $side == 'all' {

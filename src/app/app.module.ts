@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {InjectionToken, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -8,6 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ExternalDependencyModule} from './external-dependency/external-dependency.module';
 import {SharedModule} from './shared/shared.module';
+import {LandingPageModule} from './landing-page/landing-page.module';
 
 
 @NgModule({
@@ -20,6 +21,8 @@ import {SharedModule} from './shared/shared.module';
     NgbModule.forRoot(),
     ExternalDependencyModule,
     SharedModule,
+    LandingPageModule,
+
     AppRoutingModule
   ],
   providers: [],
