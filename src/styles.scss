@@ -3,7 +3,6 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@angular/material/prebuilt-themes/indigo-pink';
 @import '~font-awesome/scss/font-awesome';
-
 @import './style/custom-angular-material';
 
 * {
@@ -45,8 +44,21 @@ $padding-margin-size-list: 0 1 5 10;
 
 @each $width in $padding-margin-size-list {
   $side-list: 'left' 'right' 'bottom' 'top' 'all';
-  @each $side in $side-list{
+  @each $side in $side-list {
     @include padding-margin($side, $width);
   }
 }
+
 /* End: Adding padding And Margin styles. ex: padding-left-0, padding-all-0 etc */
+
+.discoveryImage-header {
+  background-color: blue;
+  color: white;
+  height: 48px !important;
+}
+
+.discoveryImage-footer {
+  background-color: blue;
+  color: white;
+  height: 48px !important;
+}

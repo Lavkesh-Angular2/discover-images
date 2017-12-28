@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 import {ExternalDependencyModule} from './external-dependency/external-dependency.module';
 import {SharedModule} from './shared/shared.module';
 import {LandingPageModule} from './landing-page/landing-page.module';
+import {ImageSearchModule} from './image-search/image-search.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import {LandingPageModule} from './landing-page/landing-page.module';
     ExternalDependencyModule,
     SharedModule,
     LandingPageModule,
+    ImageSearchModule,
 
     AppRoutingModule
   ],

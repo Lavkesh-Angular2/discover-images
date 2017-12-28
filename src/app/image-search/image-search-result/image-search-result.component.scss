@@ -1,0 +1,83 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+button:focus {
+  outline: 0px;
+}
+
+.discovery-image-search-result {
+
+  .search-input-div {
+    padding: 10px 10px 0px 10px;
+    input {
+      width: 100%;
+    }
+  }
+
+  .search-filter-div {
+    padding: 0px 10px 0px 10px;
+
+    .search-filter {
+      padding: 0px;
+      background-color: white;
+      border: 1px solid lightblue;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      .filter-type {
+        padding: 3px 5px;
+        border-right: 1px solid lightskyblue;
+      }
+
+      .filter-value {
+        padding: 3px 0px;
+      }
+
+      .filter-btn {
+        padding: 3px 5px;
+      }
+    }
+  }
+
+  .search-result-div {
+
+    padding: 0px 10px 0px 10px;
+
+    .search-result {
+      margin-bottom: 5px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .search-result-detail-view {
+    padding: 0px 10px 10px 10px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .discovery-image-search-result {
+    .search-result {
+      max-width: 250px;
+      max-height: 250px;
+      min-width: 200px;
+      min-height: 200px;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .discovery-image-search-result {
+    .search-result {
+      max-width: 150px;
+      max-height: 150px;
+      min-width: 150px;
+      min-height: 150px;
+    }
+  }
+}

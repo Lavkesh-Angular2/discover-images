@@ -1,0 +1,28 @@
+<!-- flex container displaying children as a column -->
+<section class="app flex-container" fxLayout="column" fxLayoutAlign="start stretch">
+
+  <mat-toolbar class="discoveryImage-header">
+    <button mat-icon-button (click)="snav.toggle()" *ngIf="isMobileLayout">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <discover-image-header></discover-image-header>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlex>
+    <mat-sidenav #snav [mode]="isMobileLayout ? 'over' : 'side'" [fixedInViewport]="isMobileLayout"
+                 [fixedTopGap]="48" [opened]="!isMobileLayout" class="filter-sidenav" fxLayout="column"
+                 fxLayoutAlign="start stretch">
+      <discover-image-image-search-filter></discover-image-image-search-filter>
+    </mat-sidenav>
+
+    <mat-sidenav-content fxLayout="column" fxLayoutAlign="start stretch">
+      <div fxFlex>
+        <discover-image-image-search-result></discover-image-image-search-result>
+      </div>
+
+      <discover-image-footer></discover-image-footer>
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+</section>

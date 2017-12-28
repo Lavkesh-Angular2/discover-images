@@ -1,4 +1,4 @@
 export interface Filter {
-   value: string,
-   code: string
+  value: string;
+  code: string;
 }

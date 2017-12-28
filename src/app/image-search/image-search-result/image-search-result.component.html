@@ -1,0 +1,56 @@
+<div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutWrap
+     class="discovery-image-search-result">
+
+  <!-- Search Input Box -->
+  <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start center"
+       fxLayoutAlign.lt-md="center center" class="search-input-div">
+    <div fxFlex="90" [fxFlex.gt-md]="60">
+      <form>
+        <mat-form-field fxFlex [floatLabel]="'never'">
+          <mat-label>Enter search string</mat-label>
+          <input name="searchInput" matInput [(ngModel)]="searchInput" />
+          <i matSuffix class="fa fa-search" aria-hidden="true"></i>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+
+  <!-- Search String Display -->
+  <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="start center" fxLayoutWrap
+       *ngIf="hasSearchInput()"  class="search-filter-div">
+    <div *ngFor="let filter of imageFilters" class="search-filter mat-elevation-z2" fxLayout="row" fxLayoutAlign="start center"
+         fxLayoutGap="5px">
+      <div class="filter-type">
+        <span>{{ filter?.type?.code | uppercase }}</span>
+      </div>
+
+      <div class="filter-value">
+        <span>{{filter?.value}}</span>
+      </div>
+
+      <div class="filter-btn">
+        <a href="javascript:void(0)" (click)="removeSearchInput(filter)">
+          <i class="fa fa-times fa-fw" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Result Display Area -->
+  <ng-container *ngIf="displaySearchResultTileView()">
+    <div fxFlex="80" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center"
+         class="search-result-div"
+         fxLayoutWrap>
+      <mat-card fxFlex *ngFor="let result of searchResults" class="search-result mat-elevation-z3" [ngClass.xs]="search-result-xs"
+                [ngStyle]="{'background-image': 'url(' + result.thumbnail + ')'}" (click)="displayImageDetailSection(result)">
+        <ng-content></ng-content>
+      </mat-card>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="displaySearchResultDetailsView()">
+    <div fxFlex="80" fxLayout="row" fxLayoutGap="5px" class="search-result-detail-view" fxLayoutWrap>
+      <discover-image-image-details fxFlex></discover-image-image-details>
+    </div>
+  </ng-container>
+</div>
