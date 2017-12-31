@@ -1,0 +1,4 @@
+# Exclude below directory
+/src
+/node_modules
+/e2e

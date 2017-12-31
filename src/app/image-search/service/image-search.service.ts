@@ -3,6 +3,8 @@ import {ImageSearchFilter} from '../modal/image-search-filter.interface';
 import * as lodash from 'lodash';
 import {Filter} from '../../shared/modal/filter.interface';
 import {ImageSearchResult} from '../modal/image-search-result.interface';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class ImageSearchService {
@@ -11,7 +13,7 @@ export class ImageSearchService {
   private imageFilters: ImageSearchFilter[] = [];
   private selectedImageForDetailsView: ImageSearchResult | undefined;
 
-  constructor() {
+  constructor(private httpClient: HttpClient) {
   }
 
   getImageFilters(): ImageSearchFilter[] {
@@ -40,6 +42,10 @@ export class ImageSearchService {
       return lodash.findIndex(this.imageFilters, checkEuqality);
     }
     return -1;
+  }
+
+  getFilterImages(): Observable<ImageSearchResult[]> {
+    return this.httpClient.get<ImageSearchResult[]>('/assets/images.json');
   }
 
   setSelectedImageForDetailsView(selectedImage: ImageSearchResult | undefined) {
