@@ -14,8 +14,6 @@
     "lib": [
       "es2017",
       "dom"
-    ],
-    "strictNullChecks": true,
-    "noImplicitUseStrict": true
+    ]
   }
 }

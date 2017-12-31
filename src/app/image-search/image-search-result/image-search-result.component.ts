@@ -36,7 +36,7 @@ export class ImageSearchResultComponent implements OnInit {
     this.imageFilters = this.imageSearchService.getImageFilters();
 
     const imageFilterChangeEvent = this.imageSearchService.imageFilterChangeEvent;
-    imageFilterChangeEvent.subscribe((imageFilters: ImageSearchFilter[]) => { this.imageFilters = imageFilters; })
+    imageFilterChangeEvent.subscribe((imageFilters: ImageSearchFilter[]) => { this.imageFilters = imageFilters; });
   }
 
   hasSearchInput(): Boolean {
