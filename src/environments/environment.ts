@@ -4,5 +4,20 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: true,
+
+  config: {
+    datasource: 'local',
+
+    common: {
+    },
+
+    local: {
+      apiUrl: 'http://local.com/api/'
+    },
+
+    local_qa: {
+      apiUrl: 'http://localqa.com/api/'
+    }
+  }
 };

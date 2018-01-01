@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {ExternalDependencyModule} from '../external-dependency/external-dependency.module';
 import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
+import { ConfigService } from './services/config.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,6 @@ import {FooterComponent} from './footer/footer.component';
     HeaderComponent,
     FooterComponent
   ],
-  providers: [
-  ]
+  providers: [ConfigService]
 })
 export class SharedModule { }
