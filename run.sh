@@ -1,5 +1,4 @@
 #!/bin/sh
-
 if [ "$#" -ne 1 ]; then
     echo "Image tag version not found...."
     exit 1
