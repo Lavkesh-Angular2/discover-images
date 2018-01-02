@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.image-search-details {
+  &.gt-sm{
+    .image-search-details-img {
+      img {
+        width: 500px;
+        height: 500px;
+      }
+    }
+  }
+
+  &.lt-md{
+    .image-search-details-img {
+      img {
+        width: 100%;
+        height: 500px;
+        max-width: 800px;
+      }
+    }
+  }
+}

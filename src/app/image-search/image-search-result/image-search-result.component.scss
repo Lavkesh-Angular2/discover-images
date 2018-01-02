@@ -60,11 +60,22 @@ button:focus {
   }
 }
 
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(lg) {
   .discovery-image-search-result {
     .search-result {
-      max-width: 250px;
-      max-height: 250px;
+      max-width: 225px;
+      max-height: 225px;
+      min-width: 225px;
+      min-height: 225px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .discovery-image-search-result {
+    .search-result {
+      max-width: 200px;
+      max-height: 200px;
       min-width: 200px;
       min-height: 200px;
     }

@@ -1,5 +1,5 @@
 <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutWrap
-     class="discovery-image-search-result">
+     class="discovery-image-search-result" fxFill>
 
   <!-- Search Input Box -->
   <div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start center"
@@ -38,19 +38,17 @@
 
   <!-- Search Result Display Area -->
   <ng-container *ngIf="displaySearchResultTileView()">
-    <div fxFlex="80" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="center center" fxLayoutAlign.gt-md="start center"
-         class="search-result-div"
-         fxLayoutWrap>
-      <mat-card fxFlex *ngFor="let result of searchResults" class="search-result mat-elevation-z3" [ngClass.xs]="search-result-xs"
-                [ngStyle]="{'background-image': 'url(' + result.thumbnail + ')'}" (click)="displayImageDetailSection(result)">
-        <ng-content></ng-content>
+    <div fxFlex="80" fxLayout="row" fxLayoutGap="5px" class="search-result-div" fxLayoutWrap fxLayoutAlign="start start">
+      <mat-card *ngFor="let result of searchResults" class="search-result mat-elevation-z3"
+                [ngStyle]="{'background-image': 'url(' + result.thumbnail + ')'}"
+                (click)="displayImageDetailSection(result)">
       </mat-card>
     </div>
   </ng-container>
 
   <ng-container *ngIf="displaySearchResultDetailsView()">
     <div fxFlex="80" fxLayout="row" fxLayoutGap="5px" class="search-result-detail-view" fxLayoutWrap>
-      <discover-image-image-details fxFlex></discover-image-image-details>
+      <discover-image-image-details fxFill></discover-image-image-details>
     </div>
   </ng-container>
 </div>

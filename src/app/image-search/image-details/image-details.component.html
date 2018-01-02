@@ -1,6 +1,6 @@
-<div fxLayout="column" fxLayoutGap="10px">
+<div fxFill fxLayout="column" fxLayoutGap="15px" class="image-search-details" [ngClass.gt-sm]="['gt-sm']" [ngClass.lt-md]="['lt-md']">
 
-  <div fxFlex="15" fxLayout="row">
+  <div fxLayout="row">
     <div>
       <button mat-raised-button color="accent" (click)="goToImageSearchTileView()">
         <i matSuffix class="fa fa-hand-o-left" aria-hidden="true"></i>
@@ -9,12 +9,12 @@
     </div>
   </div>
 
-  <div fxFlex="85" fxLayout="row" fxLayoutAlign="center center">
-    <div fxFlex="50">
-      <span>Image Section => {{selectedImage?.name}}</span>
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="15px">
+    <div class="image-search-details-img">
+      <img [src]="selectedImage?.thumbnail" class="mat-elevation-z3"/>
     </div>
 
-    <div fxFlex="50">
+    <div fxFlex class="image-search-details-content">
       <span>Details Section => {{selectedImage?.name}}</span>
     </div>
   </div>
